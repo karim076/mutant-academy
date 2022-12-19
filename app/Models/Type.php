@@ -10,6 +10,6 @@ class Type extends Model
     use HasFactory;
 
     public function superhumans() {
-        return $this->hasMany(Superhuman::class);
+        return $this->belongsToMany(Superhuman::class);
     }
 }

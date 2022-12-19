@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('superhuman', function (Blueprint $table) {
+        Schema::create('superhumans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('universe_id')
                 ->references('id')
-                ->on('universe');
+                ->on('universes');
             $table->foreignId('types_id')
                 ->references('id')
                 ->on('types');
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('superhuman');
+        Schema::dropIfExists('superhumans');
     }
 };

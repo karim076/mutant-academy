@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('superhuman_groups', function (Blueprint $table) {
+        Schema::create('superhuman_group', function (Blueprint $table) {
             $table->id();
             $table->foreignId('superhuman_id')
                 ->references('id')
-                ->on('superhuman');
+                ->on('superhumans');
             $table->foreignId('groups_id')
                 ->references('id')
                 ->on('groups');
-                
+
             $table->timestamps();
         });
     }

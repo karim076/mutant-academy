@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->foreignId('leader_id')
                 ->references('id')
-                ->on('superhuman');
+                ->on('superhumans');
 
             $table->foreignId('universe_id')
                 ->references('id')

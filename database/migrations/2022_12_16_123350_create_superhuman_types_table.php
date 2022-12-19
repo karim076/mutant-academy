@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('superhuman_id')
                 ->references('id')
-                ->on('superhuman');
+                ->on('superhumans');
 
             $table->foreignId('types_id')
                 ->references('id')
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('superhuman_types');
+        Schema::dropIfExists('superhuman_type');
     }
 };

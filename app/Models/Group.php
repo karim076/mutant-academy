@@ -14,10 +14,12 @@ class Group extends Model
     }
 
     public function teamMembers() {
-        return $this->hasMany(Superhuman::class);
+        return $this->belongsToMany(Superhuman::class);
     }
 
     public function missions() {
         return $this->belongsToMany(Mission::class);
     }
+
+
 }

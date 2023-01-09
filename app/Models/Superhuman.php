@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Superhuman extends Model
 {
     use HasFactory;
+    protected $table = 'superhumans';
+    protected $guarded = [];
 
     public function types() {
         return $this->belongsToMany(Type::class);

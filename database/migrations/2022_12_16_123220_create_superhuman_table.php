@@ -21,8 +21,8 @@ return new class extends Migration
 
             $table->enum('role', ['hero', 'villain']);
             $table->string('name');
-            $table->string('avatar');
-            $table->string('description');
+            $table->string('avatar')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

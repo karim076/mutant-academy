@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Superhuman;
+use Database\Factories\SuperHumanFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -40,8 +43,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Human',
         ]);
 
-
-
+        Superhuman::factory(100)->create();
 
         \App\Models\User::factory()->create([
             'name' => 'Test User',

@@ -18,9 +18,7 @@ return new class extends Migration
             $table->foreignId('universe_id')
                 ->references('id')
                 ->on('universes');
-            $table->foreignId('types_id')
-                ->references('id')
-                ->on('types');
+
             $table->enum('role', ['hero', 'villain']);
             $table->string('name');
             $table->string('avatar');

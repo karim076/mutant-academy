@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Universe extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 
     public function superhumans() {
         return $this->hasMany(Superhuman::class);

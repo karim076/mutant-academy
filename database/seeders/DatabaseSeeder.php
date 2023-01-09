@@ -16,9 +16,38 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\User::factory(10)->create();
 
+        \App\Models\Universe::create([
+            'name' => 'Marvel',
+        ]);
+
+        \App\Models\Universe::create([
+            'name' => 'DC',
+        ]);
+
+        \App\Models\Universe::create([
+            'name' => 'Star Wars',
+        ]);
+
+        \App\Models\Type::create([
+            'name' => 'Mutant',
+        ]);
+
+        \App\Models\Type::create([
+            'name' => 'Alien',
+        ]);
+
+        \App\Models\Type::create([
+            'name' => 'Human',
+        ]);
+
+
+
+
         \App\Models\User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+
     }
 }

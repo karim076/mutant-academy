@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Models\Superhuman;
+use App\Models\Group;
+use App\Models\Mission;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,8 +24,13 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
 
     $superhumans = Superhuman::all();
+    $groups = Group::all();
+    $missions = Mission::all();
+
     return view('dashboard', [
-        'superhumans' => $superhumans,
+        'superhumans'   => $superhumans,
+        'groups'         => $groups,
+        'missions'      => $missions
     ]);
 
 })->middleware(['auth', 'verified'])->name('dashboard');

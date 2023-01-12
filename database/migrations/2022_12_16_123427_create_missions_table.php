@@ -16,15 +16,13 @@ return new class extends Migration
         Schema::create('missions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('group_id')
-                ->references('id')
-                ->on('groups');
 
             $table->foreignId('universe_id')
                 ->references('id')
                 ->on('universes');
-
-            $table->string('location');
+            $table->enum('threat_level', ['low', 'medium', 'high']);
+            $table->string('latitude');
+            $table->string('longitude');
             $table->timestamps();
         });
     }

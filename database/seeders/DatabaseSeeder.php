@@ -5,7 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Superhuman;
-use Database\Factories\SuperHumanFactory;
+use App\Models\Mission;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -44,6 +44,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Superhuman::factory(100)->create();
+        Mission::factory(10)->create();
 
         \App\Models\User::factory()->create([
             'name' => 'Test User',

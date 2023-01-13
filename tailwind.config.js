@@ -12,12 +12,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
-
             },
-
-            spacing: {
-                '192': '48rem',
-            }
         },
     },
 

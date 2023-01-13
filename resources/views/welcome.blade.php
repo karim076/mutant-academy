@@ -22,24 +22,72 @@
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+
+                <style>
+                    body{
+                        overflow: hidden;
+                        height: 1920px;
+                        width: 1090px;
+                        background-repeat: no-repeat;
+                        margin: 0;
+                    }
+                    .text a{
+                        color: #fff !important;
+                        font-size: 20px;
+                    }
+                    .bgimg-1{
+                        height: 1920px;
+                        width: 1080px
+                        position: relative;
+                        opacity: 0.65;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                    }
+                    .caption {
+                        position: absolute;
+                        left: 40%;
+                        top: 20%;
+                        width: 100%;
+                        text-align: center;
+                        color: #000;
+                        z-index: 1000000;
+                        padding: 10;
+                    }
+                    .caption span.border {
+                        display: inline-block;
+                        background-color: rgba(17, 17, 17, 0.845);
+                        color: #fff;
+                        font-weight: bold;
+                        padding: 10px;
+                        font-size: 40px;
+                        letter-spacing: 4px;
+                        border-radius: 20px
+                    }
+                </style>
+            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+                <div class="bgimg-1">
+                    <img src="https://wallpapers.com/images/featured/qs811igzbabl1m0o.jpg" alt="">
+
+                </div>
+                <div class="caption d-flex w-100">
+                    <span class="border">Welcome to Mutant Academy</span>
+                    <br>
+                    <span class="border">A place where mutants can learn to control their powers</span>
+                </div>
+                @if (Route::has('login'))
+                <div class="hidden text fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline text-white">Dashboard</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline text-white">Log in</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline text-white">Register</a>
                         @endif
                     @endauth
                 </div>
             @endif
-
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-
-                <h1 class="text-2xl font-bold">{{ config('app.name') }}</h1>
-
             </div>
         </div>
     </body>
